@@ -1,0 +1,57 @@
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.wrapper .loaderWrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+}
+
+.wrapper .loaderWrapper .loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.videoElement {
+  position: relative;
+}
+
+.decisionButton {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  z-index: 1;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  animation: fade-in 3s 2s forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.controls {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;  
+}
+
+
+.videoElement::-webkit-full-screen {
+  display: none !important;
+}
