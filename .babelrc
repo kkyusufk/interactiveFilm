@@ -3,8 +3,9 @@
     "@babel/preset-react",
     "@babel/preset-env"
   ],
-  "plugins": [
+  "plugins":[
     "@babel/plugin-transform-arrow-functions",
-    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-transform-runtime"
   ]
 }

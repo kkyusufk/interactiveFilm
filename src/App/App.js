@@ -1,22 +1,27 @@
 import React from 'react';
 import { Video } from '../component/video';
 import './App.css';
-
+import { videoLoader } from '../utils/videoLoader';
 
 export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       mediaLoading: true,
-      controls:false,
     };
-    this.onCanPlay = this.onCanPlay.bind(this);
+    this.video;
+    this.src;
+    this.display = this.display.bind(this);
   }
 
-  onCanPlay = () => {
+    async componentWillMount() {
+      const lol = await videoLoader("./src/media/withAudio/scen_1.mp4");
+      console.log(lol);
+    }
+
+  display = () => {
     this.setState({
-      mediaLoading: false,
-      controls: true
+      mediaLoading:false
     })
   }
 
@@ -27,10 +32,6 @@ export class App extends React.Component {
       <div
         className="wrapper"
       >
-        <Video 
-          oncanplay={this.onCanPlay}
-          controls={this.state.controls}
-        />
         {
           mediaLoading ?
           <div
@@ -48,7 +49,9 @@ export class App extends React.Component {
     );
   }
 
-  componentDidMount() {
-   
-  } 
+ componentDidMount() { 
+    this.setState({
+      mediaLoading:false
+    })
+  }
 }

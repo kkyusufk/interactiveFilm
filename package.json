@@ -11,7 +11,7 @@
   "author": "Fida Siddiqui",
   "license": "ISC",
   "dependencies": {
-    "preloadjs": "^1.0.1",
+    "@babel/runtime": "^7.5.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -20,6 +20,8 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
