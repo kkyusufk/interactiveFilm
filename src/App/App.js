@@ -1,7 +1,7 @@
 import React from 'react';
-import { Video } from '../component/video';
 import './App.css';
-import { videoLoader } from '../utils/videoLoader';
+import Video from '../components/video';
+import Sources from '../utils/srcUtils';
 
 export class App extends React.Component {
   constructor(props) {
@@ -9,22 +9,7 @@ export class App extends React.Component {
     this.state = {
       mediaLoading: true,
     };
-    this.video;
-    this.src;
-    this.display = this.display.bind(this);
   }
-
-    async componentWillMount() {
-      const lol = await videoLoader("./src/media/withAudio/scen_1.mp4");
-      console.log(lol);
-    }
-
-  display = () => {
-    this.setState({
-      mediaLoading:false
-    })
-  }
-
   render() {
     const { mediaLoading } = this.state;
 
@@ -45,13 +30,14 @@ export class App extends React.Component {
           :
           null
         }
+        <Video />
       </div>
     );
   }
 
  componentDidMount() { 
-    this.setState({
-      mediaLoading:false
-    })
+    var src = new Sources();
+    src._fetchSource()
+    console.log(src.Source);
   }
 }
